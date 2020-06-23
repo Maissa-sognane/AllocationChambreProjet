@@ -1,0 +1,67 @@
+/*Page De Login*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.body-login{
+    background: #2575fc;
+    background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
+    background: -o-linear-gradient(left, #6a11cb, #2575fc);
+    background: -moz-linear-gradient(left, #6a11cb, #2575fc);
+    background: linear-gradient(left, #6a11cb, #2575fc);
+}
+.form-login{
+    min-height: 85vh;
+}
+.input-login{
+    border-radius: 5px 5px 0px 0px;
+}
+.btn-connexion {
+    border-radius: 0 0 5px 5px;
+}
+
+.btn-connexion::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    background: #2575fc;
+    background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
+    background: -o-linear-gradient(right, #6a11cb, #2575fc);
+    background: -moz-linear-gradient(right, #6a11cb, #2575fc);
+    background: linear-gradient(right, #6a11cb, #2575fc);
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.btn-connexion:hover {
+    background-color: transparent;
+}
+.btn-connexion:hover:before {
+    opacity: 1;
+}
+.logo{
+    width: 40%;
+    height: 20px;
+}
+.list-group-item-action{
+    font-size: 25px;
+}
+.list-group-item-action span{
+    font-family: "Roboto Slab";
+}
+.list-group-item-action:hover{
+    background-color: #FFC312;
+    color: white;
+}
+.list-group-item-action:focus{
+    background-color: #FFC312;
+    color: white;
+}
