@@ -65,3 +65,28 @@
     background-color: #FFC312;
     color: white;
 }
+#scrollZone{
+    max-height: 500px;
+    overflow: scroll;
+}
+
+/*Responsive*/
+
+@media screen and (min-width: 667px) and  (max-width: 1024px) {
+    .fa-users span{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 375px) and  (max-width: 667px) {
+        .list-group-item{
+            font-size: 15px;
+        }
+        h1{
+            font-size: 15px;
+        }
+    #scrollZone{
+        max-height: 400px;
+        width: 100%;
+    }
+}

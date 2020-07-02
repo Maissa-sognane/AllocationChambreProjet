@@ -25,12 +25,13 @@ class SecurityController extends Controller{
             if($this->validator->isValid()){
                 $user=$this->dao->findByLoginAndPwd($login,$password);
                 if($user!=null){
-
-                    $_SESSION['statut'] = 1;
                     //Ajouter dans la session
-                        $this->layout="admin";
-                        $this->view="CreateEtudiant";
-                        $this->render();
+                        $_SESSION['statut'] = 1;
+                        if(isset($_SESSION['statut'])){
+                            $this->layout = "admin";
+                            $this->view = "CreateEtudiant";
+                            $this->render();
+                        }
                 }else{
                     //User Not Existe
                     $this->data_view["error"]="Login Mot de Passe Incorrect";
@@ -45,17 +46,12 @@ class SecurityController extends Controller{
         }else{
             if(!isset($_SESSION['statut'])){
                 $this->index();
-            }else{
-                $this->layout="admin";
-                $this->view="CreateEtudiant";
-                $this->render();
             }
         }
-
     }
     public function deconnexion(){
-        unset($_SESSION['statut']);
         $this->index();
+        session_destroy();
     }
 
 }

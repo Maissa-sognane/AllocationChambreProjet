@@ -1,23 +1,55 @@
 <?php
-class TypeChambre{
+class TypeChambre implements ILocation {
 
-    private $libelle;
+    private $categorie;
+    private $id;
+
+    public   function __construct($row=null){
+        if($row!=null){
+            $this->hydrate($row);
+        }
+    }
+
+    public  function hydrate($row){
+        $this->id = $row['id'];
+        $this->categorie = $row['categorie'];
+    }
 
     /**
      * @return mixed
      */
-    public function getLibelle()
+    public function getId()
     {
-        return $this->libelle;
+        return $this->id;
     }
 
     /**
-     * @param mixed $libelle
+     * @param mixed $id
      */
-    public function setLibelle($libelle)
+    public function setId($id)
     {
-        $this->libelle = $libelle;
+        $this->id = $id;
     }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * @param mixed $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+    }
+
+
 
 
 }

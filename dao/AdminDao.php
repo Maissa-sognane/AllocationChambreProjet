@@ -21,8 +21,8 @@ class AdminDao extends Manager {
             return null;
         }
         return count($data)==1?$data[0]:$data;
-
     }
+
 
 
 }

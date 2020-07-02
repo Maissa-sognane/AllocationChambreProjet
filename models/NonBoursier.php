@@ -1,10 +1,9 @@
 <?php
+class NonBoursier implements ILocation {
 
-class TypeBourse implements ILocation
-{
     private $id;
-    private $libele;
-    private $montant;
+    private $adresse;
+    private $id_etudiant;
 
     public   function __construct($row=null){
         if($row!=null){
@@ -13,9 +12,9 @@ class TypeBourse implements ILocation
     }
 
     public  function hydrate($row){
-        $this->id = $row['id'];
-        $this->libele = $row['libele'];
-        $this->montant = $row['montant'];
+        $this->id=$row['id'];
+        $this->adresse=$row['adresse'];
+        $this->id_etudiant=$row['id_etudiant'];
     }
 
     /**
@@ -37,37 +36,34 @@ class TypeBourse implements ILocation
     /**
      * @return mixed
      */
-    public function getLibele()
+    public function getAdresse()
     {
-        return $this->libele;
+        return $this->adresse;
     }
 
     /**
-     * @param mixed $libele
+     * @param mixed $adresse
      */
-    public function setLibele($libele)
+    public function setAdresse($adresse)
     {
-        $this->libele = $libele;
+        $this->adresse = $adresse;
     }
 
     /**
      * @return mixed
      */
-    public function getMontant()
+    public function getIdEtudiant()
     {
-        return $this->montant;
+        return $this->id_etudiant;
     }
 
     /**
-     * @param mixed $montant
+     * @param mixed $id_etudiant
      */
-    public function setMontant($montant)
+    public function setIdEtudiant($id_etudiant)
     {
-        $this->montant = $montant;
+        $this->id_etudiant = $id_etudiant;
     }
-
-
-
 
 
 
